@@ -1,12 +1,5 @@
-print("a^2 = x (mod p)")
-p = int(input("enter p value:"))
+p = 29
+ints = [14, 6, 11]
 
-x = int(input("enter x value:"))
-
-for a in range(p-1):
-    b = (a*a)%p
-    if b == x:
-        print("x is a quadratic residue ")
-        print("for a value : ",a)
-    else:
-        continue
+qr = [a for a in range(p) if pow(a,2,p) in ints]
+print(f"Flag: {min(qr)}")
